@@ -1,6 +1,5 @@
-function taskComplete(hasTime, lostTime, feedback){
-    this.hasTime = hasTime;
-    this.lostTime = lostTime;
-    this.feedback = feedback;
-};
+const listTask = document.querySelector('#listTask');
 
+listTask.addEventListener('click', (e) => {
+    console.log(e.target);
+})

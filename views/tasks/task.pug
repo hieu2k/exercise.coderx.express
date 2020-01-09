@@ -9,7 +9,7 @@ block content
         input(type="number", name="timeComplete", min = 0)
         button(id="createButton") Create
 
-    ul
+    ul(id="listTask")
         each task in tasks
             li
                 span Task name: 
@@ -26,9 +26,10 @@ block content
                 a(href="/tasks/" + task.id + "/delete") Delete
                 span &nbsp
                 div(class="wrapperComplete")
-                    button(id="buttonOfComplete", data-completeButton= task.id) complete
+                    button(id="buttonOfComplete") complete
                     form(action="/tasks/"+ task.id + "/complete", method="POST", class="formOfComplete")
                 button(class="timeStart") Start
+                button(class="timeStop") Stop
                     
     
     script(src="/js/index.js")                    
