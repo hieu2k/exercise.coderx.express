@@ -1,0 +1,11 @@
+extends ../layout/layout
+
+block content
+    h1 complete
+
+    form(action="/tasks/"+ id + "/complete", method="POST")
+        input(type="number", name="hasTime", min= 0, style="display: none")
+        input(type="number", name="lostTime", max= 0, style="display: none")
+        input(type="text", name="feedback")
+        button I'll make more better. Then again
+//- block complete

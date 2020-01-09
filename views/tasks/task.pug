@@ -1,0 +1,34 @@
+extends ../layout/layout
+
+block content
+    h1 Tasks
+
+    form(action="/tasks/create", method="POST", id="createTask")
+        input(type="text", name="title")
+        input(type="text", name="content")
+        input(type="number", name="timeComplete", min = 0)
+        button(id="createButton") Create
+
+    ul
+        each task in tasks
+            li
+                span Task name: 
+                span= task.title
+                span &nbsp
+                span TimeComplete: 
+                span(data-time= task.timeComplete, id="completeTime")= task.timeComplete
+                span &nbsp
+                span Content: 
+                span= task.content
+                span &nbsp
+                a(href="/tasks/" + task.id + "/update") update
+                span &nbsp
+                a(href="/tasks/" + task.id + "/delete") Delete
+                span &nbsp
+                div(class="wrapperComplete")
+                    button(id="buttonOfComplete", data-completeButton= task.id) complete
+                    form(action="/tasks/"+ task.id + "/complete", method="POST", class="formOfComplete")
+                button(class="timeStart") Start
+                    
+    
+    script(src="/js/index.js")                    

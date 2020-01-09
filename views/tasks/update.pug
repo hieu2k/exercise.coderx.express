@@ -1,0 +1,8 @@
+h1 Update
+
+form(action="/tasks/" + task.id + "/update", method="POST")
+    input(type="text", name="title", value= task.title)
+    input(type="text", name="content", value= task.content)
+    input(type="number", name="time", min = 0, value= task.time)
+    //- input(type="text", name="id", value= task.id, style="display: none!important")
+    button Update
